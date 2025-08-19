@@ -11,7 +11,7 @@ const config = ref<ThemeUserConfig>({
       'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-wewdy7.jpg',
       'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-pkxlv3.jpg',
     ],
-    style: 'filter-dot',
+    style: 'dot',
     waveTheme: 'horizontal',
   },
 })

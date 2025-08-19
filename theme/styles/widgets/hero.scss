@@ -1,0 +1,76 @@
+.sakura-hero {
+  .hero-style::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-attachment: fixed;
+  }
+
+  .hero-style.dim::before {
+    background-color: oklch(0% 0 0 / 30%);
+  }
+
+  .hero-style.grid::before {
+    background-image: linear-gradient(
+        to right,
+        oklch(0% 0 0 / 20%) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, oklch(0% 0 0 / 20%) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .hero-style.scanline::before {
+    background-image: linear-gradient(
+      to bottom,
+      oklch(0% 0 0 / 50%) 0%,
+      oklch(0% 0 0 / 50%) 50%,
+      oklch(0% 0 0 / 0%) 50%,
+      oklch(0% 0 0 / 0%) 100%
+    );
+    background-size: 100% 2px;
+  }
+
+  .hero-style.glitch::before {
+    background-image: linear-gradient(
+      to bottom,
+      oklch(0% 0 0 / 50%) 0%,
+      oklch(0% 0 0 / 50%) 50%,
+      oklch(0% 0 0 / 0%) 50%,
+      oklch(0% 0 0 / 0%) 100%
+    );
+    background-size: 100% 2px;
+  }
+
+  .hero-style.glitch:hover::before {
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      transparent 50%,
+      fadeout(oklch(25.2% 0 0), 50) 50%,
+      fadeout(oklch(25.2% 0 0), 50)
+    );
+    animation: wobble 250ms linear infinite;
+    background-size: 100% 4px;
+  }
+
+  .hero-style.dot::before {
+    background: radial-gradient(
+      circle at center,
+      oklch(0% 0 0 / 20%) 0%,
+      transparent 100%
+    );
+    background-size: 3px 3px;
+  }
+
+  @keyframes wobble {
+    0%,
+    100% {
+      background-size: 100% 4px;
+    }
+
+    50% {
+      background-size: 100% 2px;
+    }
+  }
+}

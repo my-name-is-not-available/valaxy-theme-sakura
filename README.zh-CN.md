@@ -69,7 +69,7 @@ export default defineValaxyConfig<ThemeUserConfig>({
         'https://wrxinyue-images.s3.bitiful.net/wallpaper/Genshin Impact - Yae Miko (4) Cybust PC.mp4',
         'https://wrxinyue-images.s3.bitiful.net/pc-wallpaper/wallhaven-yxwy7k.jpg'
       ],
-      style: 'filter-dot',
+      style: 'scanline',
     },
   },
 })

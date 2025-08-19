@@ -63,7 +63,7 @@ export const defaultThemeConfig: ThemeUserConfig = {
     urls: [],
     randomUrls: false,
     fixedImg: false,
-    style: '',
+    style: 'dim',
 
     typewriter: false,
     enableHitokoto: false,

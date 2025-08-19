@@ -11,8 +11,12 @@ export interface Hero {
    */
   randomUrls: boolean
   fixedImg: boolean
-  style: 'filter-dot' | 'filter-dim' | 'filter-grid' | ''
-  mode: 'dim' | 'dot' | 'scanline'
+  /**
+   * @zh 背景叠加样式
+   * @en Background overlay style
+   * @default 'dim'
+   */
+  style: 'dim' | 'dot' | 'scanline' | 'glitch' | 'grid' | ''
 
   /**
    * @zh 是否启用打字机组件

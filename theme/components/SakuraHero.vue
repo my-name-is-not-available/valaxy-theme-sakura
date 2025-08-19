@@ -36,7 +36,7 @@ watch(() => appStore.wallpaperIsPlaying, (isPlaying) => {
 <template>
   <header class="sakura-hero <md:px-5">
     <template v-if="isMounted">
-      <div class="absolute inset-0 overflow-hidden" :class="[!appStore.wallpaperIsPlaying && hero.style && 'banner-style', hero.style]">
+      <div class="absolute inset-0 overflow-hidden" :class="[!appStore.wallpaperIsPlaying && hero.style && 'hero-style', hero.style]">
         <slot name="background">
           <SakuraHeroBackground :urls="hero?.urls" />
         </slot>
@@ -80,60 +80,6 @@ watch(() => appStore.wallpaperIsPlaying, (isPlaying) => {
 
   .sakura-glitch-text {
     font-family: Ubuntu, sans-serif;
-  }
-
-  .banner-style::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-attachment: fixed;
-  }
-
-  .banner-style.filter-dim::before {
-    background-color: oklch(0% 0 0 / 30%);
-  }
-
-  .banner-style.filter-grid::before {
-    background-image: linear-gradient(
-      to bottom,
-      oklch(0% 0 0 / 50%) 0%,
-      oklch(0% 0 0 / 50%) 50%,
-      oklch(0% 0 0 / 0%) 50%,
-      oklch(0% 0 0 / 0%) 100%
-    );
-    background-size: 100% 2px;
-  }
-
-  .banner-style.filter-grid:hover::before {
-    background: linear-gradient(
-      to bottom,
-      transparent,
-      transparent 50%,
-      fadeout(oklch(25.2% 0 0), 50) 50%,
-      fadeout(oklch(25.2% 0 0), 50)
-    );
-    animation: wobble 250ms linear infinite;
-    background-size: 100% 4px;
-  }
-
-  .banner-style.filter-dot::before {
-    background: radial-gradient(
-      circle at center,
-      oklch(0% 0 0 / 20%) 0%,
-      transparent 100%
-    );
-    background-size: 3px 3px;
-  }
-
-  @keyframes wobble {
-    0%,
-    100% {
-      background-size: 100% 4px;
-    }
-
-    50% {
-      background-size: 100% 2px;
-    }
   }
 }
 </style>
